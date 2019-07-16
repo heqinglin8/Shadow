@@ -24,6 +24,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -82,6 +83,14 @@ public class MainActivity extends Activity {
                 requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
             }
         }
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                PluginHelper.getInstance().update();
+            }
+        },20*1000);
+
 
 
     }

@@ -19,6 +19,7 @@
 package com.tencent.shadow.sample.host;
 
 import android.content.Context;
+import android.util.Log;
 
 import org.apache.commons.io.FileUtils;
 
@@ -79,11 +80,34 @@ public class PluginHelper {
 
             InputStream zip = mContext.getAssets().open(sPluginZip);
             FileUtils.copyInputStreamToFile(zip, pluginZipFile);
-
+            Log.i("hql","准备插件完成");
         } catch (IOException e) {
             throw new RuntimeException("从assets中复制apk出错", e);
         }
     }
+
+    private void updatePlugin() {
+        try {
+            InputStream is = mContext.getAssets().open("patch/pluginmanager.apk");
+            FileUtils.copyInputStreamToFile(is, pluginManagerFile);
+
+            InputStream zip = mContext.getAssets().open("patch/"+sPluginZip);
+            FileUtils.copyInputStreamToFile(zip, pluginZipFile);
+            Log.i("hql","插件替换成功");
+        } catch (IOException e) {
+            throw new RuntimeException("从patch中复制apk出错", e);
+        }
+    }
+
+    public void update(){
+        singlePool.execute(new Runnable() {
+            @Override
+            public void run() {
+                updatePlugin();
+            }
+        });
+    }
+
 
 
 }
