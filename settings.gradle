@@ -68,3 +68,4 @@ def includeSample() {
     project(':sample-normal-app').projectDir = file('projects/sample/source/sample-plugin/sample-normal-app')
     project(':sample-plugin-app').projectDir = file('projects/sample/source/sample-plugin/sample-plugin-app')
 }
+
