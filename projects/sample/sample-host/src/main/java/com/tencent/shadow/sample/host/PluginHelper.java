@@ -90,6 +90,7 @@ public class PluginHelper {
         try {
             InputStream is = mContext.getAssets().open("patch/pluginmanager.apk");
             FileUtils.copyInputStreamToFile(is, pluginManagerFile);
+            Log.i("hql","manager替换成功");
 
             InputStream zip = mContext.getAssets().open("patch/"+sPluginZip);
             FileUtils.copyInputStreamToFile(zip, pluginZipFile);

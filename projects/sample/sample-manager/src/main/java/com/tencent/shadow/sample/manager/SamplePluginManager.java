@@ -21,8 +21,10 @@ package com.tencent.shadow.sample.manager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Toast;
 
 import com.tencent.shadow.core.manager.installplugin.InstalledPlugin;
 import com.tencent.shadow.dynamic.host.EnterCallback;
@@ -76,6 +78,7 @@ public class SamplePluginManager extends FastPluginManager {
         } else {
             throw new IllegalArgumentException("不认识的fromId==" + fromId);
         }
+//        Log.i("hql","更新后的manager！");
     }
 
     private void onStartActivity(final Context context, Bundle bundle, final EnterCallback callback) {

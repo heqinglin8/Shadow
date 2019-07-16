@@ -89,9 +89,7 @@ public class MainActivity extends Activity {
             public void run() {
                 PluginHelper.getInstance().update();
             }
-        },20*1000);
-
-
+        },15*1000);
 
     }
 

@@ -31,6 +31,7 @@ import android.widget.TextView;
 import com.tencent.shadow.sample.plugin.app.lib.R;
 import com.tencent.shadow.sample.plugin.app.lib.gallery.cases.entity.UseCase;
 import com.tencent.shadow.sample.plugin.app.lib.gallery.util.PluginChecker;
+import com.tencent.shadow.sample.plugin.app.lib.gallery.util.ToastUtil;
 
 public class UseCaseSummaryFragment extends Fragment {
 
@@ -45,6 +46,8 @@ public class UseCaseSummaryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.layout_fragment_case_summary, container, false);
         bindViews(view);
+//        mCaseName.setText("新插件：sample-app-lib");
+//        ToastUtil.showToast(getActivity(),"更新后的插件！！！");
         return view;
     }
 
