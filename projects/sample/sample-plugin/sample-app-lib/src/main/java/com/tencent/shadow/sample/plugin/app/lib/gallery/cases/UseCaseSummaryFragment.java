@@ -48,6 +48,14 @@ public class UseCaseSummaryFragment extends Fragment {
         bindViews(view);
 //        mCaseName.setText("新插件：sample-app-lib");
 //        ToastUtil.showToast(getActivity(),"更新后的插件！！！");
+        mCaseName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClassName(UseCaseSummaryFragment.this.getActivity(),"com.tencent.shadow.sample.host.MainActivity");
+                startActivity(intent);
+            }
+        });
         return view;
     }
 

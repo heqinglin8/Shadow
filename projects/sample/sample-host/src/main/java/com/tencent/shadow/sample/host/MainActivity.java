@@ -84,12 +84,12 @@ public class MainActivity extends Activity {
             }
         }
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                PluginHelper.getInstance().update();
-            }
-        },15*1000);
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                PluginHelper.getInstance().update();
+//            }
+//        },15*1000);
 
     }
 
